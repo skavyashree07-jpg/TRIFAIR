@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ngo_s1",
+    "name": "Sample Craft Cooperative One",
+    "region": "Sample region A",
+    "consent_status": "consented",
+    "status": "ACTIVE",
+    "verified_on": "2026-08-01",
+    "sample": true
+  },
+  {
+    "id": "ngo_s2",
+    "name": "Sample Artisan Trust Two",
+    "region": "Sample region B",
+    "consent_status": "consented",
+    "status": "ACTIVE",
+    "verified_on": "2026-08-10",
+    "sample": true
+  },
+  {
+    "id": "ngo_s3",
+    "name": "Sample Village Society Three",
+    "region": "Sample region C",
+    "consent_status": "consented",
+    "status": "PENDING",
+    "verified_on": null,
+    "sample": true
+  }
+]

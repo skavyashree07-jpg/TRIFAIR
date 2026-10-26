@@ -1,0 +1,12 @@
+[
+  {
+    "id": "lic_s1",
+    "design_id": "des_s1",
+    "requester": "Sample Buyer Co",
+    "purpose": "Sample licence request",
+    "quantity": 100,
+    "status": "REQUESTED",
+    "fee": null,
+    "sample": true
+  }
+]

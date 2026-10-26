@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ngo-1",
+    "name": "Sample NGO One",
+    "region": "Sample District A",
+    "verified": true,
+    "consent_status": "consented"
+  },
+  {
+    "id": "ngo-2",
+    "name": "Sample NGO Two",
+    "region": "Sample District B",
+    "verified": true,
+    "consent_status": "consented"
+  },
+  {
+    "id": "ngo-3",
+    "name": "Sample Pending NGO",
+    "region": "Sample District C",
+    "verified": false,
+    "consent_status": "pending"
+  }
+]

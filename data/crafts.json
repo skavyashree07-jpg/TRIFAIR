@@ -1,0 +1,110 @@
+[
+  {
+    "id": "craft_warli",
+    "name": "Warli painting (sample)",
+    "tribe": "Sample tribe A",
+    "region": "Sample region, Maharashtra",
+    "history": "Sample text. To be replaced with sourced, community-reviewed content.",
+    "steps": [
+      "Sample step 1",
+      "Sample step 2",
+      "Sample step 3",
+      "Sample step 4"
+    ],
+    "symbols": [
+      {
+        "name": "Sample symbol",
+        "meaning": "Sample meaning, pending community review"
+      }
+    ],
+    "gi_status": {
+      "status": "unverified",
+      "registry_url": null,
+      "verified_on": null
+    },
+    "consent_status": "consented",
+    "reviewed_on": null,
+    "sample": true
+  },
+  {
+    "id": "craft_gond",
+    "name": "Gond painting (sample)",
+    "tribe": "Sample tribe B",
+    "region": "Sample region, Madhya Pradesh",
+    "history": "Sample text. To be replaced with sourced, community-reviewed content.",
+    "steps": [
+      "Sample step 1",
+      "Sample step 2",
+      "Sample step 3",
+      "Sample step 4"
+    ],
+    "symbols": [
+      {
+        "name": "Sample symbol",
+        "meaning": "Sample meaning, pending community review"
+      }
+    ],
+    "gi_status": {
+      "status": "unverified",
+      "registry_url": null,
+      "verified_on": null
+    },
+    "consent_status": "consented",
+    "reviewed_on": null,
+    "sample": true
+  },
+  {
+    "id": "craft_dokra",
+    "name": "Dokra metal casting (sample)",
+    "tribe": "Sample tribe C",
+    "region": "Sample region, Chhattisgarh",
+    "history": "Sample text. To be replaced with sourced, community-reviewed content.",
+    "steps": [
+      "Sample step 1",
+      "Sample step 2",
+      "Sample step 3",
+      "Sample step 4"
+    ],
+    "symbols": [
+      {
+        "name": "Sample symbol",
+        "meaning": "Sample meaning, pending community review"
+      }
+    ],
+    "gi_status": {
+      "status": "unverified",
+      "registry_url": null,
+      "verified_on": null
+    },
+    "consent_status": "consented",
+    "reviewed_on": null,
+    "sample": true
+  },
+  {
+    "id": "craft_bodo",
+    "name": "Bodo weaving (sample)",
+    "tribe": "Sample tribe D",
+    "region": "Sample region, Assam",
+    "history": "Sample text. To be replaced with sourced, community-reviewed content.",
+    "steps": [
+      "Sample step 1",
+      "Sample step 2",
+      "Sample step 3",
+      "Sample step 4"
+    ],
+    "symbols": [
+      {
+        "name": "Sample symbol",
+        "meaning": "Sample meaning, pending community review"
+      }
+    ],
+    "gi_status": {
+      "status": "unverified",
+      "registry_url": null,
+      "verified_on": null
+    },
+    "consent_status": "consented",
+    "reviewed_on": null,
+    "sample": true
+  }
+]

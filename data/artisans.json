@@ -1,0 +1,74 @@
+[
+  {
+    "id": "art_s1",
+    "ngo_id": "ngo_s1",
+    "display_name": "Sample Artisan A1",
+    "village": "Sample Village 1",
+    "craft_id": "craft_warli",
+    "story": "Invented sample story. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "Sample community council",
+    "status": "ACTIVE",
+    "sample": true
+  },
+  {
+    "id": "art_s2",
+    "ngo_id": "ngo_s1",
+    "display_name": "Sample Artisan A2",
+    "village": "Sample Village 2",
+    "craft_id": "craft_gond",
+    "story": "Invented sample story. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "Sample community council",
+    "status": "ACTIVE",
+    "sample": true
+  },
+  {
+    "id": "art_s3",
+    "ngo_id": "ngo_s2",
+    "display_name": "Sample Artisan A3",
+    "village": "Sample Village 3",
+    "craft_id": "craft_dokra",
+    "story": "Invented sample story. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "Sample community council",
+    "status": "ACTIVE",
+    "sample": true
+  },
+  {
+    "id": "art_s4",
+    "ngo_id": "ngo_s2",
+    "display_name": "Sample Artisan A4",
+    "village": "Sample Village 4",
+    "craft_id": "craft_bodo",
+    "story": "Invented sample story. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "Sample community council",
+    "status": "ACTIVE",
+    "sample": true
+  },
+  {
+    "id": "art_s5",
+    "ngo_id": "ngo_s1",
+    "display_name": "Sample Artisan A5",
+    "village": "Sample Village 5",
+    "craft_id": "craft_warli",
+    "story": "Invented sample story. Not a real person.",
+    "consent_status": "pending",
+    "endorsed_by": "Sample community council",
+    "status": "ACTIVE",
+    "sample": true
+  },
+  {
+    "id": "art_s6",
+    "ngo_id": "ngo_s2",
+    "display_name": "Sample Artisan A6",
+    "village": "Sample Village 6",
+    "craft_id": "craft_dokra",
+    "story": "Invented sample story. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "Sample community council",
+    "status": "ACTIVE",
+    "sample": true
+  }
+]

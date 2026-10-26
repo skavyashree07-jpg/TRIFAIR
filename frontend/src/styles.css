@@ -1,0 +1,320 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * TRIFAIR design tokens. Themes switch by changing variables only:
+ *   html[data-theme="mahua" | "forest"] + .dark + .hc (high contrast)
+ * Bright brand colours (turmeric, vermilion, leaf, ochre, madder) are FILL ONLY.
+ * Text uses foreground, *-text tokens, or *-foreground on a fill.
+ */
+
+@theme inline {
+  --font-heading: "Yatra One", "Mukta", system-ui, sans-serif;
+  --font-sans: "Mukta", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-danger-text: var(--danger-text);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-text: var(--success-text);
+  --color-motif-1: var(--motif-1);
+  --color-motif-2: var(--motif-2);
+  --color-motif-3: var(--motif-3);
+  --color-banner: var(--banner);
+  --color-banner-foreground: var(--banner-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* ---------- Theme: Mahua dusk (default) ---------- */
+:root,
+html[data-theme="mahua"] {
+  --radius: 0.75rem;
+  --background: #fbf6ea; /* chalk */
+  --foreground: #14101f; /* soot */
+  --card: #fffcf4;
+  --card-foreground: #14101f;
+  --popover: #fffcf4;
+  --popover-foreground: #14101f;
+  --primary: #231a47; /* indigo */
+  --primary-foreground: #fbf6ea;
+  --secondary: #efe6d1;
+  --secondary-foreground: #231a47;
+  --muted: #f1e9d6;
+  --muted-foreground: #4a4360;
+  --accent: #f2b01e; /* turmeric — fill only */
+  --accent-foreground: #14101f;
+  --destructive: #d8412f; /* vermilion — fill only */
+  --destructive-foreground: #14101f;
+  --danger-text: #b8341f;
+  --success: #3e8e5a; /* leaf — fill only */
+  --success-foreground: #14101f;
+  --success-text: #2e7d4b;
+  --motif-1: #f2b01e;
+  --motif-2: #d8412f;
+  --motif-3: #3e8e5a;
+  --banner: #231a47;
+  --banner-foreground: #fbf6ea;
+  --border: #d9cdb2;
+  --input: #b9ab8e;
+  --ring: #231a47;
+}
+html[data-theme="mahua"].dark {
+  --background: #14101f;
+  --foreground: #fbf6ea;
+  --card: #1e1733;
+  --card-foreground: #fbf6ea;
+  --popover: #1e1733;
+  --popover-foreground: #fbf6ea;
+  --primary: #f2b01e;
+  --primary-foreground: #14101f;
+  --secondary: #2a2145;
+  --secondary-foreground: #fbf6ea;
+  --muted: #241c3c;
+  --muted-foreground: #d4cbe4;
+  --accent: #f2b01e;
+  --accent-foreground: #14101f;
+  --destructive: #d8412f;
+  --destructive-foreground: #14101f;
+  --danger-text: #f59a8b;
+  --success: #3e8e5a;
+  --success-foreground: #14101f;
+  --success-text: #86d3a0;
+  --banner: #f2b01e;
+  --banner-foreground: #14101f;
+  --border: #3d3260;
+  --input: #5a4d82;
+  --ring: #f2b01e;
+}
+
+/* ---------- Theme: Forest and ochre ---------- */
+html[data-theme="forest"] {
+  --background: #f5eedc; /* rice */
+  --foreground: #0d1f1c;
+  --card: #fbf6e8;
+  --card-foreground: #0d1f1c;
+  --popover: #fbf6e8;
+  --popover-foreground: #0d1f1c;
+  --primary: #12342f; /* forest */
+  --primary-foreground: #f5eedc;
+  --secondary: #e8dfc6;
+  --secondary-foreground: #12342f;
+  --muted: #ebe2ca;
+  --muted-foreground: #3d4a45;
+  --accent: #e3a82b; /* ochre — fill only */
+  --accent-foreground: #0d1f1c;
+  --destructive: #b4332b; /* madder — fill only */
+  --destructive-foreground: #f5eedc;
+  --danger-text: #9a2a23;
+  --success: #3e8e5a;
+  --success-foreground: #0d1f1c;
+  --success-text: #2a6b43;
+  --motif-1: #e3a82b;
+  --motif-2: #b4332b;
+  --motif-3: #12342f;
+  --banner: #12342f;
+  --banner-foreground: #f5eedc;
+  --border: #d3c7a8;
+  --input: #ae9f7c;
+  --ring: #12342f;
+}
+html[data-theme="forest"].dark {
+  --background: #0b1d1a;
+  --foreground: #f5eedc;
+  --card: #12342f;
+  --card-foreground: #f5eedc;
+  --popover: #12342f;
+  --popover-foreground: #f5eedc;
+  --primary: #e3a82b;
+  --primary-foreground: #0d1f1c;
+  --secondary: #173d37;
+  --secondary-foreground: #f5eedc;
+  --muted: #143029;
+  --muted-foreground: #cfd9d2;
+  --accent: #e3a82b;
+  --accent-foreground: #0d1f1c;
+  --destructive: #b4332b;
+  --destructive-foreground: #f5eedc;
+  --danger-text: #f2a097;
+  --success: #3e8e5a;
+  --success-foreground: #0d1f1c;
+  --success-text: #8fd4a6;
+  --motif-3: #3e8e5a;
+  --banner: #e3a82b;
+  --banner-foreground: #0d1f1c;
+  --border: #2a524b;
+  --input: #3f6b63;
+  --ring: #e3a82b;
+}
+
+/* ---------- High contrast (layered on any theme) ---------- */
+html.hc {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --muted: #ffffff;
+  --muted-foreground: #000000;
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --danger-text: #8a1f10;
+  --success-text: #14532d;
+  --banner: #000000;
+  --banner-foreground: #ffffff;
+  --border: #000000;
+  --input: #000000;
+  --ring: #000000;
+}
+html.hc.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #000000;
+  --card-foreground: #ffffff;
+  --muted: #000000;
+  --muted-foreground: #ffffff;
+  --secondary: #000000;
+  --secondary-foreground: #ffffff;
+  --primary: #ffff00;
+  --primary-foreground: #000000;
+  --danger-text: #ffb3a7;
+  --success-text: #a7f3c0;
+  --banner: #ffff00;
+  --banner-foreground: #000000;
+  --border: #ffffff;
+  --input: #ffffff;
+  --ring: #ffff00;
+}
+
+/* ---------- Text size ---------- */
+html[data-text="normal"] {
+  font-size: 100%;
+}
+html[data-text="large"] {
+  font-size: 118.75%;
+}
+html[data-text="xl"] {
+  font-size: 137.5%;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  /* Hindi typography rules */
+  html[lang="hi"] body {
+    line-height: 1.8;
+  }
+  html[lang="hi"] * {
+    letter-spacing: normal !important;
+    text-transform: none !important;
+  }
+  html[lang="hi"] h1,
+  html[lang="hi"] h2,
+  html[lang="hi"] h3 {
+    line-height: 1.8;
+  }
+}
+
+@utility tap {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@utility motif-band {
+  background-image:
+    repeating-linear-gradient(135deg, var(--color-motif-1) 0 10px, transparent 10px 20px),
+    repeating-linear-gradient(45deg, var(--color-motif-2) 0 6px, transparent 6px 20px);
+  height: 8px;
+}
+
+/* Uneven hand-cut corners giving an authentic tribal handcrafted / village-wall feel */
+@utility uneven-corners {
+  border-radius: 20px 8px 24px 10px / 10px 24px 8px 22px;
+}
+
+@utility uneven-corners-sm {
+  border-radius: 12px 6px 14px 6px / 6px 14px 6px 12px;
+}
+
+@utility uneven-corners-lg {
+  border-radius: 28px 12px 34px 16px / 16px 32px 14px 30px;
+}
+
+@utility village-wall-card {
+  border-radius: 22px 10px 26px 12px / 12px 24px 10px 24px;
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-card);
+  box-shadow:
+    0 4px 20px -2px rgba(20, 16, 31, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+@keyframes warli-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.warli-ring-spin {
+  animation: warli-spin 60s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .warli-ring-spin {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ord_s1",
+    "product_id": "prod_s1",
+    "quantity": 1,
+    "status": "DELIVERED",
+    "created_at": "2026-09-11T10:00:00+00:00",
+    "payment_status": "PAID_SANDBOX",
+    "sample": true
+  },
+  {
+    "id": "ord_s2",
+    "product_id": "prod_s3",
+    "quantity": 1,
+    "status": "SHIPPED",
+    "created_at": "2026-09-12T10:00:00+00:00",
+    "payment_status": "PAID_SANDBOX",
+    "sample": true
+  },
+  {
+    "id": "ord_s3",
+    "product_id": "prod_s4",
+    "quantity": 1,
+    "status": "PLACED",
+    "created_at": "2026-09-13T10:00:00+00:00",
+    "payment_status": "PAID_SANDBOX",
+    "sample": true
+  },
+  {
+    "id": "ord_s4",
+    "product_id": "prod_s5",
+    "quantity": 1,
+    "status": "DELIVERED",
+    "created_at": "2026-09-14T10:00:00+00:00",
+    "payment_status": "PAID_SANDBOX",
+    "sample": true
+  }
+]

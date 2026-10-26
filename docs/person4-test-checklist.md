@@ -1,0 +1,16 @@
+# Feature 4 test checklist
+- [ ] Add fictional sample artisan; ensure consent status is recorded.
+- [ ] Submit sample product and review it in Admin queue.
+- [ ] Confirm price formula: materials + hours × rate + NGO cost + shipping + platform fee.
+- [ ] Update sample order status.
+- [ ] Update payout status and export CSV.
+- [ ] Register image and confirm 64-character SHA-256 hash.
+- [ ] Confirm pending/non-consented designs are hidden from public passports.
+- [ ] Request a licence for an eligible design.
+- [ ] Approve licence and confirm one royalty ledger entry.
+- [ ] Confirm NOT_AVAILABLE designs cannot be licensed.
+- [ ] Valid QR returns VERIFIED; revoked returns REVOKED; unknown returns NOT_FOUND; tampered token rejected (after shared QR API integration).
+- [ ] Below-minimum price requires admin approval with a recorded reason.
+- [ ] Audit log records admin actions.
+- [ ] Test with at least 10 users and record anonymized feedback.
+- [ ] Rehearse the two-minute end-to-end demo.

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "craft-warli",
+    "name": "Warli painting (sample)",
+    "tribe": "Warli (sample entry)",
+    "region": "Sample region, Maharashtra",
+    "history": "Sample text: a wall-painting tradition using white pigment on earthen backgrounds to depict daily life and seasons.",
+    "steps": [
+      "Prepare earthen base",
+      "Mix rice-paste white",
+      "Paint circles, triangles and lines",
+      "Dry and seal"
+    ],
+    "symbols": ["Circle (sun, moon)", "Triangle (mountain, tree)", "Tarpa dance spiral"],
+    "gi_status": {
+      "status": "registered",
+      "registry_url": "https://example.org/sample-gi-registry",
+      "verified_on": "2026-09-01"
+    },
+    "consent_status": "consented",
+    "reviewed_on": "2026-10-01"
+  },
+  {
+    "id": "craft-gond",
+    "name": "Gond painting (sample)",
+    "tribe": "Gond (sample entry)",
+    "region": "Sample region, Madhya Pradesh",
+    "history": "Sample text: a painting tradition of dots and lines telling stories of forests, animals and ancestors.",
+    "steps": [
+      "Sketch the outline",
+      "Fill with dot and line patterns",
+      "Add colour layers",
+      "Finish borders"
+    ],
+    "symbols": ["Tree of life", "Peacock", "Fish pattern"],
+    "gi_status": {
+      "status": "registered",
+      "registry_url": "https://example.org/sample-gi-registry",
+      "verified_on": "2026-09-01"
+    },
+    "consent_status": "consented",
+    "reviewed_on": "2026-10-01"
+  },
+  {
+    "id": "craft-dokra",
+    "name": "Dokra metal casting (sample)",
+    "tribe": "Dhokra artisans (sample entry)",
+    "region": "Sample region, Chhattisgarh",
+    "history": "Sample text: a lost-wax casting technique for making brass figures and ornaments.",
+    "steps": [
+      "Shape clay core",
+      "Coat with wax threads",
+      "Cover in clay mould",
+      "Pour molten metal",
+      "Break mould and polish"
+    ],
+    "symbols": ["Horse", "Elephant", "Lamp"],
+    "gi_status": {
+      "status": "unverified",
+      "registry_url": null,
+      "verified_on": null
+    },
+    "consent_status": "consented",
+    "reviewed_on": "2026-10-01"
+  },
+  {
+    "id": "craft-bodo",
+    "name": "Bodo weaving (sample)",
+    "tribe": "Bodo (sample entry)",
+    "region": "Sample region, Assam",
+    "history": "Sample text: a handloom tradition producing textiles with bold geometric motifs.",
+    "steps": ["Spin and dye yarn", "Set up the loom", "Weave motifs", "Finish edges"],
+    "symbols": ["Agor (motif)", "Hill pattern", "Flower pattern"],
+    "gi_status": {
+      "status": "not_registered",
+      "registry_url": null,
+      "verified_on": null
+    },
+    "consent_status": "consented",
+    "reviewed_on": "2026-10-01"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "art-1",
+    "ngo_id": "ngo-1",
+    "display_name": "Sample Artisan 1",
+    "village": "Sample Village A",
+    "craft_id": "craft-warli",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "ngo-1"
+  },
+  {
+    "id": "art-2",
+    "ngo_id": "ngo-2",
+    "display_name": "Sample Artisan 2",
+    "village": "Sample Village B",
+    "craft_id": "craft-gond",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "ngo-2"
+  },
+  {
+    "id": "art-3",
+    "ngo_id": "ngo-1",
+    "display_name": "Sample Artisan 3",
+    "village": "Sample Village C",
+    "craft_id": "craft-dokra",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "ngo-1"
+  },
+  {
+    "id": "art-4",
+    "ngo_id": "ngo-2",
+    "display_name": "Sample Artisan 4",
+    "village": "Sample Village D",
+    "craft_id": "craft-bodo",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "ngo-2"
+  },
+  {
+    "id": "art-5",
+    "ngo_id": "ngo-1",
+    "display_name": "Sample Artisan 5",
+    "village": "Sample Village E",
+    "craft_id": "craft-warli",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "ngo-1"
+  },
+  {
+    "id": "art-6",
+    "ngo_id": "ngo-2",
+    "display_name": "Sample Artisan 6",
+    "village": "Sample Village F",
+    "craft_id": "craft-gond",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "ngo-2"
+  },
+  {
+    "id": "art-7",
+    "ngo_id": "ngo-1",
+    "display_name": "Sample Artisan 7",
+    "village": "Sample Village G",
+    "craft_id": "craft-dokra",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "consented",
+    "endorsed_by": "ngo-1"
+  },
+  {
+    "id": "art-8",
+    "ngo_id": "ngo-2",
+    "display_name": "Sample Artisan 8",
+    "village": "Sample Village H",
+    "craft_id": "craft-bodo",
+    "story": "Sample story written for this demo. Not a real person.",
+    "consent_status": "pending",
+    "endorsed_by": "ngo-2"
+  }
+]

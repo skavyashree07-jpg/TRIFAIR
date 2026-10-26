@@ -1,0 +1,38 @@
+[
+  {
+    "id": "pay_s1",
+    "artisan_id": "art_s1",
+    "order_id": "ord_s1",
+    "status": "PAID",
+    "bank_reference": "SBX-0001",
+    "paid_on": "2026-09-20",
+    "sample": true
+  },
+  {
+    "id": "pay_s2",
+    "artisan_id": "art_s2",
+    "order_id": "ord_s2",
+    "status": "PENDING",
+    "bank_reference": null,
+    "paid_on": null,
+    "sample": true
+  },
+  {
+    "id": "pay_s3",
+    "artisan_id": "art_s3",
+    "order_id": "ord_s3",
+    "status": "PENDING",
+    "bank_reference": null,
+    "paid_on": null,
+    "sample": true
+  },
+  {
+    "id": "pay_s4",
+    "artisan_id": "art_s4",
+    "order_id": "ord_s4",
+    "status": "READY",
+    "bank_reference": null,
+    "paid_on": null,
+    "sample": true
+  }
+]

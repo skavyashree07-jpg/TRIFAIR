@@ -1,0 +1,41 @@
+[
+  {
+    "id": "des_s1",
+    "ngo_id": "ngo_s1",
+    "community": "Sample community A",
+    "title": "Sample sun-and-dancers motif",
+    "meaning": "Invented sample meaning.",
+    "file_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1",
+    "registered_on": "2026-09-05",
+    "consent_status": "consented",
+    "licence_policy": "COMMERCIAL",
+    "visibility": "public",
+    "sample": true
+  },
+  {
+    "id": "des_s2",
+    "ngo_id": "ngo_s2",
+    "community": "Sample community B",
+    "title": "Sample ritual pattern (view only)",
+    "meaning": "Invented sample meaning.",
+    "file_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2",
+    "registered_on": "2026-09-06",
+    "consent_status": "consented",
+    "licence_policy": "NOT_AVAILABLE",
+    "visibility": "view_only",
+    "sample": true
+  },
+  {
+    "id": "des_s3",
+    "ngo_id": "ngo_s2",
+    "community": "Sample community C",
+    "title": "Sample border pattern",
+    "meaning": "Invented sample meaning.",
+    "file_hash": "ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc3",
+    "registered_on": "2026-09-07",
+    "consent_status": "pending",
+    "licence_policy": "NON_COMMERCIAL",
+    "visibility": "public",
+    "sample": true
+  }
+]
