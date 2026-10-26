@@ -3,9 +3,11 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+from dotenv import load_dotenv
 from functools import lru_cache
 from pathlib import Path
 
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 class ConfigError(RuntimeError):
     pass
@@ -32,6 +34,7 @@ class Settings:
     verify_rate_limit_per_min: int
     scan_alert_threshold: int  # scans of one token per hour before it is flagged
     cors_origins: list[str]
+    port: int
     jwt_hours: int = 8
 
 
@@ -48,7 +51,11 @@ def get_settings() -> Settings:
         scan_alert_threshold=int(os.environ.get("TRIFAIR_SCAN_ALERT_THRESHOLD", "20")),
         cors_origins=[
             o.strip()
-            for o in os.environ.get("TRIFAIR_CORS_ORIGINS", "http://localhost:5173").split(",")
+            for o in os.environ.get(
+                "TRIFAIR_CORS_ORIGINS",
+                "http://localhost:8080,http://127.0.0.1:8080,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173,http://127.0.0.1:4173",
+            ).split(",")
             if o.strip()
         ],
+        port=int(os.environ.get("TRIFAIR_PORT", "8001")),
     )

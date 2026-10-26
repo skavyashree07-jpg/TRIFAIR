@@ -278,6 +278,8 @@
     "samplePillRevoked": "रद्द (डोकरा)",
     "samplePillPendingArtisan": "लंबित कारीगर (सहमति नहीं)",
     "samplePillUnknown": "अज्ञात कोड",
+    "networkError": "सत्यापन सेवा से संपर्क नहीं हो पाया। कनेक्शन जाँचकर फिर प्रयास करें।",
+    "demoTokenNote": "कृत्रिम डेमो टोकन",
     "resultHeading": "सत्यापन मुहर परिणाम",
     "artisanLabel": "कारीगर",
     "villageLabel": "गाँव",

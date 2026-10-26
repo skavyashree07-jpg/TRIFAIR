@@ -2,17 +2,18 @@
 
 FastAPI + SQLAlchemy 2 + SQLite. Sample data and demo only. No real payments. Independent student project.
 
-## Run
-```bash
+## Run locally (Windows PowerShell)
+```powershell
 cd backend
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-cp .env.example .env        # fill the three secrets (python -c "import secrets; print(secrets.token_urlsafe(48))")
-set -a; source .env; set +a
-python seed.py --reset       # loads ../data, prints demo logins and QR tokens
-uvicorn app.main:app --reload   # OpenAPI at http://localhost:8000/docs
-pytest                        # all tests
+Copy-Item .env.example .env
+py -c "import secrets; print(secrets.token_urlsafe(48))"
 ```
-Demo users: `admin`, `ngo_one` (ngo_s1), `ngo_two` (ngo_s2). Password is printed by the seed script.
+Put three different generated values into the three secret variables in `.env`. Existing `trifair.db` is preserved; missing tables are created compatibly. To seed only an empty database, run `py seed.py` without `--reset`. Do not use `--reset` on data you need to keep.
+
+Start the API at the default port 8001 with `python -m app`; set `TRIFAIR_PORT` in `.env` to change it. OpenAPI is at http://127.0.0.1:8001/docs. The equivalent fixed-port command is `python -m uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload`. Run `pytest` for the backend suite. Demo users: `admin`, `ngo_one` (ngo_s1), and `ngo_two` (ngo_s2); the password is printed only when seeding an empty database.
 
 ## Layout
 - `app/pricing.py` fair-price function (Decimal), `app/qr.py` HMAC tokens, `app/audit_chain.py` hash chain, `app/ratelimit.py`: pure, no framework.
@@ -44,3 +45,7 @@ The shared contract is unchanged; these are additive. Please confirm.
 - The audit chain assumes a single writer (fine for SQLite). Behind multiple workers, serialize appends.
 - Tables are created at startup; there are no migrations.
 - JWTs are stateless and last 8 hours; there is no logout or refresh.
+
+## Environment
+
+Copy `.env.example` to `.env`. Set unique random values for `TRIFAIR_QR_SECRET`, `TRIFAIR_JWT_SECRET`, and `TRIFAIR_PAYMENT_SECRET`. `TRIFAIR_PORT` defaults to 8001. `TRIFAIR_CORS_ORIGINS` includes the current Vite development origin (8080), the standard Vite port (5173), and preview (4173) on localhost and 127.0.0.1. Set exact HTTPS origins on deployment. Never commit `.env` or put secrets in frontend variables.

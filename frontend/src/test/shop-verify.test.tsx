@@ -3,6 +3,7 @@ import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import React from "react";
 import i18n, { setLanguage } from "@/i18n";
 import { getProduct, getCrafts, verifyToken } from "@/api";
+import * as api from "@/api";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { QrPassportPanel } from "@/components/shop/QrPassportPanel";
@@ -231,5 +232,26 @@ describe("VerificationView Component", () => {
       expect(screen.getByText("VERIFIED")).toBeInTheDocument();
       expect(screen.getByText("Traced to a verified artisan and NGO.")).toBeInTheDocument();
     });
+  });
+
+  it("shows a loading state and keeps network failures distinct from NOT_FOUND", async () => {
+    let rejectVerification!: (reason: Error) => void;
+    const verify = vi
+      .spyOn(api, "verifyToken")
+      .mockImplementation(() => new Promise((_resolve, reject) => (rejectVerification = reject)));
+
+    render(<VerificationView initialToken="TF-SAMPLE-101" />);
+    expect(screen.getByText(/Verification Stamp Result/)).toBeInTheDocument();
+    expect(screen.getByText(/Verification Stamp Result/).closest("div")).toHaveAttribute(
+      "aria-busy",
+      "true",
+    );
+
+    rejectVerification(new Error("offline"));
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "We couldn't reach the verification service.",
+    );
+    expect(screen.queryByText("NOT FOUND")).not.toBeInTheDocument();
+    verify.mockRestore();
   });
 });

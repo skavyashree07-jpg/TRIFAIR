@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { Search, QrCode, ArrowRight, ShieldCheck, Tag } from "lucide-react";
-import { verifyToken, getProducts, type VerifyResult, type Product } from "@/api";
+import { verifyToken, getProducts, USE_REAL_API, type VerifyResult, type Product } from "@/api";
 import { VerificationStamp } from "@/components/verify/VerificationStamp";
 import { TriangleMotifBand } from "@/components/art/TriangleMotifBand";
 
@@ -19,22 +19,35 @@ export function VerificationView({ initialToken }: VerificationViewProps) {
   const [result, setResult] = useState<VerifyResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [matchingProduct, setMatchingProduct] = useState<Product | null>(null);
+  const [networkError, setNetworkError] = useState(false);
 
   // Sample tokens for user testing as requested:
   // "Test tokens: use the sample products' qr_token values plus any unknown code."
-  const sampleTestTokens = [
-    { code: "TF-SAMPLE-101", label: t("verify.samplePillVerified"), state: "VERIFIED" },
-    { code: "TF-SAMPLE-104", label: t("verify.samplePillPending"), state: "PENDING" },
-    { code: "TF-SAMPLE-111", label: t("verify.samplePillRevoked"), state: "REVOKED" },
-    { code: "TF-SAMPLE-108", label: t("verify.samplePillPendingArtisan"), state: "NOT_FOUND" },
-    { code: "TF-UNKNOWN-999", label: t("verify.samplePillUnknown"), state: "NOT_FOUND" },
-  ];
+  const sampleTestTokens = USE_REAL_API
+    ? [
+        {
+          code: "Yl9nzfSzRnQI9WNPjuGgiQ.tKG9d1DVmMwjSuToLeKlMb",
+          label: t("verify.samplePillVerified"),
+          state: "VERIFIED",
+        },
+        { code: "TF-UNKNOWN-999", label: t("verify.samplePillUnknown"), state: "NOT_FOUND" },
+      ]
+    : [
+        { code: "TF-SAMPLE-101", label: t("verify.samplePillVerified"), state: "VERIFIED" },
+        { code: "TF-SAMPLE-104", label: t("verify.samplePillPending"), state: "PENDING" },
+        { code: "TF-SAMPLE-111", label: t("verify.samplePillRevoked"), state: "REVOKED" },
+        { code: "TF-SAMPLE-108", label: t("verify.samplePillPendingArtisan"), state: "NOT_FOUND" },
+        { code: "TF-UNKNOWN-999", label: t("verify.samplePillUnknown"), state: "NOT_FOUND" },
+      ];
 
-  const performVerification = (code: string) => {
+  const performVerification = useCallback((code: string) => {
     const trimmed = code.trim();
     if (!trimmed) return;
 
     setLoading(true);
+    setResult(null);
+    setMatchingProduct(null);
+    setNetworkError(false);
     setActiveToken(trimmed);
 
     verifyToken(trimmed)
@@ -51,26 +64,18 @@ export function VerificationView({ initialToken }: VerificationViewProps) {
           setMatchingProduct(null);
         }
       })
-      .catch((err) => {
-        console.error("Verification failed:", err);
-        setResult({
-          state: "NOT_FOUND",
-          artisan: null,
-          village: null,
-          ngo: null,
-          verified_on: null,
-          labels: [],
-        });
+      .catch(() => {
+        setNetworkError(true);
         setLoading(false);
       });
-  };
+  }, []);
 
   useEffect(() => {
     if (initialToken) {
       setInputCode(initialToken);
       performVerification(initialToken);
     }
-  }, [initialToken]);
+  }, [initialToken, performVerification]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -166,6 +171,15 @@ export function VerificationView({ initialToken }: VerificationViewProps) {
           aria-busy="true"
         >
           <p className="text-muted-foreground">{t("verify.resultHeading")}...</p>
+        </div>
+      )}
+
+      {!loading && networkError && (
+        <div
+          role="alert"
+          className="village-wall-card uneven-corners border border-destructive/40 p-5 text-danger-text"
+        >
+          {t("verify.networkError")}
         </div>
       )}
 

@@ -11,17 +11,21 @@ import type { Artisan, Craft, Ngo, PriceInput, PriceResult, Product, VerifyResul
 
 export * from "./types";
 
+export const USE_REAL_API = import.meta.env.VITE_USE_REAL_API
+  ? import.meta.env.VITE_USE_REAL_API !== "false"
+  : import.meta.env.MODE !== "test";
 
-export const USE_REAL_API = true;
-
+// Empty by default: same-origin production deployments and the Vite dev proxy.
+// Set VITE_API_BASE_URL when the API is hosted on a separate origin.
+const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? "").replace(/\/$/, "");
 
 async function get<T>(path: string): Promise<T> {
-  const res = await fetch(path);
+  const res = await fetch(`${API_BASE}${path}`);
   if (!res.ok) throw new Error(`GET ${path} failed: ${res.status}`);
   return (await res.json()) as T;
 }
 async function getOrNull<T>(path: string): Promise<T | null> {
-  const res = await fetch(path);
+  const res = await fetch(`${API_BASE}${path}`);
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`GET ${path} failed: ${res.status}`);
   return (await res.json()) as T;

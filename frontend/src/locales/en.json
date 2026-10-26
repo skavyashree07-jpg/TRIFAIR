@@ -278,6 +278,8 @@
     "samplePillRevoked": "REVOKED (Dokra)",
     "samplePillPendingArtisan": "PENDING ARTISAN (Not consented)",
     "samplePillUnknown": "UNKNOWN CODE",
+    "networkError": "We couldn't reach the verification service. Check your connection and try again.",
+    "demoTokenNote": "Synthetic demo token",
     "resultHeading": "Verification Stamp Result",
     "artisanLabel": "Artisan",
     "villageLabel": "Village",

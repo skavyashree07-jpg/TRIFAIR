@@ -92,4 +92,5 @@ export interface VerifyResult {
   ngo: string | null;
   verified_on: string | null;
   labels: string[];
+  message?: string;
 }

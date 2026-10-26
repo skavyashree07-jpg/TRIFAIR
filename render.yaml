@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: trifair-api
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    autoDeployTrigger: commit
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: TRIFAIR_DB_URL
+        value: sqlite:///./trifair.db
+      - key: TRIFAIR_DATA_DIR
+        value: ../data
+      - key: TRIFAIR_AUTO_SEED
+        value: "true"
+      - key: TRIFAIR_QR_SECRET
+        sync: false
+      - key: TRIFAIR_JWT_SECRET
+        generateValue: true
+      - key: TRIFAIR_PAYMENT_SECRET
+        generateValue: true
+      - key: TRIFAIR_DEMO_PASSWORD
+        generateValue: true
+      - key: TRIFAIR_CORS_ORIGINS
+        sync: false
+      - key: TRIFAIR_PLATFORM_FEE_PCT
+        value: "5"
+      - key: TRIFAIR_VERIFY_RATE_LIMIT
+        value: "30"
+      - key: TRIFAIR_SCAN_ALERT_THRESHOLD
+        value: "20"
